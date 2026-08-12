@@ -31,320 +31,106 @@
     color: var(--ink);
     font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
   }
-  .page { max-width: 1900px; margin: 0 auto; padding: 22px 18px 230px; }
-  header { margin-bottom: 14px; }
-  .kicker {
-    margin-bottom: 6px;
-    color: var(--blue);
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 2.4px;
-    text-transform: uppercase;
-  }
-  h1 { margin: 0; font-size: 26px; line-height: 1.2; }
-  .sub { max-width: 1180px; margin-top: 8px; color: var(--muted); font-size: 13px; line-height: 1.55; }
+  .page { max-width: 2700px; margin: 0 auto; padding: 26px 22px 45px; }
+  header { margin-bottom: 16px; }
+  .kicker { margin-bottom: 7px; color: var(--blue); font-size: 12px; font-weight: 800; letter-spacing: 2.4px; text-transform: uppercase; }
+  h1 { margin: 0; font-size: 30px; line-height: 1.2; }
+  .sub { max-width: 1350px; margin-top: 9px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-  .principles {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(190px, 1fr));
-    gap: 9px;
-    margin: 16px 0 12px;
-  }
-  .principle {
-    min-height: 60px;
-    border: 1px solid #dbe4ef;
-    border-radius: 12px;
-    background: #fff;
-    padding: 10px 12px;
-    font-size: 11.5px;
-    line-height: 1.45;
-  }
-  .principle b { display: block; margin-bottom: 2px; color: #0f172a; font-size: 12px; }
+  .principles { display: grid; grid-template-columns: repeat(4, minmax(230px, 1fr)); gap: 14px; margin: 18px 0 14px; }
+  .principle { min-height: 76px; border: 1px solid #dbe4ef; border-radius: 13px; background: #fff; padding: 13px 15px; font-size: 13px; line-height: 1.5; }
+  .principle b { display: block; margin-bottom: 3px; color: #0f172a; font-size: 14px; }
 
-  .legend {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px 18px;
-    margin: 11px 0 15px;
-    color: #475569;
-    font-size: 11px;
-  }
-  .legend span { display: inline-flex; align-items: center; gap: 6px; }
-  .line-sample { width: 25px; height: 0; border-top: 3px solid; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px 22px; margin: 13px 0 17px; color: #475569; font-size: 12px; }
+  .legend span { display: inline-flex; align-items: center; gap: 7px; }
+  .line-sample { width: 30px; height: 0; border-top: 3px solid; }
   .line-in { border-color: var(--blue); }
   .line-config { border-color: var(--purple); border-top-style: dashed; }
   .line-store { border-color: var(--teal); }
   .line-out { border-color: var(--purple); }
   .line-human { border-color: var(--amber); border-top-style: dashed; }
 
-  .canvas-outer {
-    overflow-x: auto;
-    border: 1px solid #dbe4ef;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.05);
-  }
-  .canvas {
-    position: relative;
-    width: 1840px;
-    height: 1120px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  .lane {
-    position: absolute;
-    top: 62px;
-    bottom: 58px;
-    border: 1px solid;
-    border-radius: 18px;
-    z-index: 0;
-  }
-  .lane-source { left: 20px; width: 350px; border-color: #bfdbfe; background: #f8fbff; }
-  .lane-process { left: 420px; width: 350px; border-color: #bae6fd; background: #f7fcff; }
-  .lane-store { left: 820px; width: 430px; border-color: #a7f3d0; background: #f7fffb; }
-  .lane-result { left: 1300px; width: 520px; border-color: #e9d5ff; background: #fdfaff; }
+  .section-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin: 0 0 11px; }
+  .section-nav-label { margin-right: 3px; color: #64748b; font-size: 12px; font-weight: 700; }
+  .section-nav button { border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; padding: 7px 13px; color: #334155; font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
+  .section-nav button:hover { border-color: #60a5fa; color: #1d4ed8; background: #eff6ff; }
 
-  .module-frame {
-    position: absolute;
-    left: 398px;
-    top: 62px;
-    width: 875px;
-    height: 905px;
-    z-index: 2;
-    pointer-events: none;
-    border: 3px dashed #0ea5e9;
-    border-radius: 22px;
-    background: transparent;
-  }
-  .module-ribbon {
-    position: absolute;
-    left: 610px;
-    top: 69px;
-    z-index: 6;
-    width: 450px;
-    border: 2px solid #0284c7;
-    border-radius: 12px;
-    background: #e0f2fe;
-    padding: 7px 13px;
-    color: #075985;
-    text-align: center;
-    font-size: 11px;
-    line-height: 1.3;
-    cursor: pointer;
-    box-shadow: 0 4px 12px rgba(2,132,199,.12);
-  }
-  .module-ribbon strong { display: block; font-size: 12.5px; }
+  .canvas-outer { overflow-x: auto; overflow-y: hidden; border: 1px solid #dbe4ef; border-radius: 18px; background: #fff; box-shadow: 0 8px 30px rgba(15,23,42,.05); }
+  .canvas { position: relative; width: 2580px; height: 1500px; margin: 0 auto; overflow: hidden; }
+  .lane { position: absolute; top: 62px; bottom: 58px; border: 1px solid; border-radius: 20px; z-index: 0; }
+  .lane-source { left: 25px; width: 475px; border-color: #bfdbfe; background: #f8fbff; }
+  .lane-process { left: 650px; width: 520px; border-color: #bae6fd; background: #f7fcff; }
+  .lane-store { left: 1320px; width: 500px; border-color: #a7f3d0; background: #f7fffb; }
+  .lane-result { left: 1970px; width: 585px; border-color: #e9d5ff; background: #fdfaff; }
+
+  .module-frame { position: absolute; left: 620px; top: 62px; width: 1230px; height: 1300px; z-index: 2; pointer-events: none; border: 3px dashed #0ea5e9; border-radius: 24px; background: transparent; }
+  .module-ribbon { position: absolute; left: 1020px; top: 76px; z-index: 6; width: 470px; border: 2px solid #0284c7; border-radius: 13px; background: #e0f2fe; padding: 9px 15px; color: #075985; text-align: center; font-size: 12px; line-height: 1.35; cursor: pointer; box-shadow: 0 4px 12px rgba(2,132,199,.12); }
+  .module-ribbon strong { display: block; font-size: 14px; }
   .module-ribbon:hover { background: #bae6fd; }
   .module-ribbon.selected { box-shadow: 0 0 0 3px rgba(14,165,233,.25); }
 
-  .col-head {
-    position: absolute;
-    top: 16px;
-    z-index: 3;
-    transform: translateX(-50%);
-    border: 1.5px solid;
-    border-radius: 999px;
-    padding: 7px 15px;
-    background: #fff;
-    font-size: 11.5px;
-    font-weight: 850;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    white-space: nowrap;
-  }
-
-  .node {
-    position: absolute;
-    z-index: 3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: 1.5px solid;
-    border-radius: 13px;
-    padding: 10px 13px;
-    background: #fff;
-    text-align: center;
-    font-size: 11.5px;
-    line-height: 1.38;
-    cursor: pointer;
-    user-select: none;
-    transition: transform .12s ease, box-shadow .12s ease;
-  }
+  .col-head { position: absolute; top: 16px; z-index: 3; transform: translateX(-50%); border: 1.5px solid; border-radius: 999px; padding: 8px 17px; background: #fff; font-size: 13px; font-weight: 850; letter-spacing: 1.4px; text-transform: uppercase; white-space: nowrap; }
+  .node { position: absolute; z-index: 3; display: flex; align-items: center; justify-content: center; flex-direction: column; border: 1.5px solid; border-radius: 15px; padding: 14px 17px; background: #fff; text-align: center; font-size: 13.5px; line-height: 1.46; cursor: pointer; user-select: none; transition: transform .12s ease, box-shadow .12s ease; }
   .node:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(15,23,42,.13); }
   .node.selected { box-shadow: 0 0 0 3px rgba(37,99,235,.25), 0 6px 18px rgba(15,23,42,.12); }
-  .node strong { display: block; margin-bottom: 3px; font-size: 12.5px; line-height: 1.25; }
-  .node small { display: block; color: #64748b; font-size: 10.5px; line-height: 1.32; }
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    margin-top: 6px;
-    border-radius: 999px;
-    padding: 3px 8px;
-    font-size: 9.5px;
-    font-weight: 800;
-    letter-spacing: .35px;
-    text-transform: uppercase;
-  }
+  .node strong { display: block; margin-bottom: 5px; font-size: 15px; line-height: 1.3; }
+  .node small { display: block; color: #64748b; font-size: 12px; line-height: 1.36; }
+  .badge { display: inline-flex; align-items: center; margin-top: 7px; border-radius: 999px; padding: 4px 10px; font-size: 10.5px; font-weight: 800; letter-spacing: .35px; text-transform: uppercase; }
 
-  .source { left: 45px; width: 300px; border-color: #60a5fa; background: var(--blue-bg); }
+  .source { left: 72px; width: 380px; border-color: #60a5fa; background: var(--blue-bg); }
   .source .badge { color: #1d4ed8; background: #dbeafe; }
-  .process { left: 445px; width: 300px; border-color: #38bdf8; background: #f0f9ff; }
+  .process { left: 710px; width: 400px; border-color: #38bdf8; background: #f0f9ff; }
   .process .badge { color: #0369a1; background: #e0f2fe; }
-  .decision {
-    border-color: #f59e0b;
-    background: var(--amber-bg);
-  }
+  .decision { border-color: #f59e0b; background: var(--amber-bg); }
   .decision .badge { color: #92400e; background: #fef3c7; }
-  .output { left: 1330px; width: 460px; border-color: #c084fc; background: var(--purple-bg); }
+  .output { left: 2025px; width: 475px; border-color: #c084fc; background: var(--purple-bg); }
   .output .badge { color: #6b21a8; background: #f3e8ff; }
   .output.report { border-color: #4ade80; background: var(--green-bg); }
   .output.report .badge { color: #166534; background: #dcfce7; }
   .output.archive { border-color: #94a3b8; background: var(--slate-bg); }
   .output.archive .badge { color: #475569; background: #e2e8f0; }
 
-  .widget-frame {
-    position: absolute;
-    left: 1315px;
-    top: 405px;
-    width: 490px;
-    height: 355px;
-    z-index: 2;
-    border: 2px dashed #f59e0b;
-    border-radius: 17px;
-    background: rgba(255,251,235,.72);
-    pointer-events: none;
-  }
-  .widget-frame-title {
-    position: absolute;
-    left: 1345px;
-    top: 413px;
-    z-index: 5;
-    width: 430px;
-    color: #92400e;
-    font-size: 10.5px;
-    font-weight: 850;
-    letter-spacing: .4px;
-    text-align: center;
-    text-transform: uppercase;
-  }
+  .widget-frame { position: absolute; left: 1998px; top: 585px; width: 530px; height: 425px; z-index: 2; border: 2px dashed #f59e0b; border-radius: 19px; background: rgba(255,251,235,.72); pointer-events: none; }
+  .widget-frame-title { position: absolute; left: 2038px; top: 600px; z-index: 5; width: 450px; color: #92400e; font-size: 12px; font-weight: 850; letter-spacing: .4px; text-align: center; text-transform: uppercase; }
 
-  .storage-shell {
-    position: absolute;
-    left: 845px;
-    top: 115px;
-    width: 380px;
-    height: 850px;
-    z-index: 2;
-    border: 2px solid #34d399;
-    border-radius: 17px;
-    background: rgba(236,253,245,.9);
-    padding: 48px 16px 16px;
-    cursor: pointer;
-    transition: box-shadow .12s ease;
-  }
+  .storage-shell { position: absolute; left: 1365px; top: 160px; width: 410px; height: 1100px; z-index: 2; border: 2px solid #34d399; border-radius: 19px; background: rgba(236,253,245,.9); padding: 58px 18px 18px; cursor: pointer; transition: box-shadow .12s ease; }
   .storage-shell:hover { box-shadow: 0 8px 22px rgba(15,118,110,.13); }
   .storage-shell.selected { box-shadow: 0 0 0 3px rgba(15,118,110,.2); }
-  .storage-title {
-    position: absolute;
-    top: 13px;
-    left: 18px;
-    right: 18px;
-    text-align: center;
-    color: #065f46;
-    font-size: 13px;
-    font-weight: 850;
-  }
-  .storage-subtitle {
-    position: absolute;
-    top: 31px;
-    left: 18px;
-    right: 18px;
-    text-align: center;
-    color: #047857;
-    font-size: 9.5px;
-  }
-  .store-row {
-    position: absolute;
-    left: 16px;
-    right: 16px;
-    z-index: 4;
-    display: flex;
-    align-items: center;
-    border: 1.3px solid #6ee7b7;
-    border-radius: 11px;
-    background: #fff;
-    padding: 9px 11px;
-    cursor: pointer;
-    transition: transform .12s ease, box-shadow .12s ease;
-  }
+  .storage-title { position: absolute; top: 15px; left: 20px; right: 20px; text-align: center; color: #065f46; font-size: 15px; font-weight: 850; }
+  .storage-subtitle { position: absolute; top: 37px; left: 20px; right: 20px; text-align: center; color: #047857; font-size: 11px; }
+  .store-row { position: absolute; left: 18px; right: 18px; z-index: 4; display: flex; align-items: center; border: 1.3px solid #6ee7b7; border-radius: 13px; background: #fff; padding: 13px 14px; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
   .store-row:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(6,95,70,.11); }
   .store-row.selected { box-shadow: 0 0 0 3px rgba(16,185,129,.22); }
-  .store-icon {
-    flex: 0 0 34px;
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-    margin-right: 9px;
-    border-radius: 9px;
-    color: #047857;
-    background: #d1fae5;
-    font-size: 16px;
-  }
-  .store-copy { text-align: left; font-size: 10.5px; line-height: 1.28; }
-  .store-copy strong { display: block; margin-bottom: 2px; color: #064e3b; font-size: 11.5px; }
-  .store-copy small { color: #64748b; font-size: 9.8px; }
+  .store-icon { flex: 0 0 42px; width: 42px; height: 42px; display: grid; place-items: center; margin-right: 11px; border-radius: 10px; color: #047857; background: #d1fae5; font-size: 18px; }
+  .store-copy { text-align: left; font-size: 12px; line-height: 1.35; }
+  .store-copy strong { display: block; margin-bottom: 3px; color: #064e3b; font-size: 13.5px; }
+  .store-copy small { color: #64748b; font-size: 11.5px; }
 
-  .source-note, .process-note, .store-note {
-    position: absolute;
-    z-index: 3;
-    border: 1px dashed;
-    border-radius: 11px;
-    padding: 9px 12px;
-    font-size: 10.5px;
-    line-height: 1.35;
-    text-align: center;
-  }
-  .source-note { left: 45px; top: 875px; width: 300px; border-color: #94a3b8; color: #475569; background: #fff; }
-  .process-note { left: 445px; top: 970px; width: 300px; border-color: #38bdf8; color: #075985; background: #f0f9ff; }
-  .store-note { left: 845px; top: 970px; width: 380px; border-color: #34d399; color: #065f46; background: #f0fdf4; }
+  .source-note, .process-note, .store-note { position: absolute; z-index: 3; border: 1px dashed; border-radius: 13px; padding: 12px 15px; font-size: 12px; line-height: 1.42; text-align: center; }
+  .source-note { left: 72px; top: 1240px; width: 380px; border-color: #94a3b8; color: #475569; background: #fff; }
+  .process-note { left: 710px; top: 1310px; width: 400px; border-color: #38bdf8; color: #075985; background: #f0f9ff; }
+  .store-note { left: 1365px; top: 1285px; width: 410px; border-color: #34d399; color: #065f46; background: #f0fdf4; }
 
   svg.edges { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: visible; }
   .edge-label-bg { fill: white; stroke-width: 1; rx: 5; ry: 5; opacity: .96; }
-  .edge-label { font-size: 9.5px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
+  .edge-label { font-size: 11px; font-weight: 800; text-anchor: middle; dominant-baseline: central; }
 
-  .details {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 50;
-    max-height: 210px;
-    overflow-y: auto;
-    border-top: 2px solid #bfdbfe;
-    border-radius: 16px 16px 0 0;
-    background: rgba(248,251,255,.98);
-    box-shadow: 0 -8px 28px rgba(30,64,175,.14);
-    padding: 14px 24px 16px;
-    backdrop-filter: blur(8px);
-  }
-  .details h3 { margin: 0 0 5px; color: #1d4ed8; font-size: 15px; }
-  .details p, .details li { color: #334155; font-size: 12.5px; line-height: 1.5; }
+  .details { position: relative; z-index: 5; min-height: 120px; margin-top: 18px; border: 1px solid #bfdbfe; border-left: 5px solid #3b82f6; border-radius: 16px; background: #f8fbff; box-shadow: 0 8px 24px rgba(30,64,175,.08); padding: 18px 22px 20px; }
+  .details h3 { margin: 0 0 7px; color: #1d4ed8; font-size: 17px; }
+  .details p, .details li { color: #334155; font-size: 13.5px; line-height: 1.55; }
   .details p { margin: 0; }
   .details ul { margin: 5px 0 0 18px; padding: 0; }
   .details .hint { color: #64748b; }
   footer { margin-top: 13px; color: #94a3b8; font-size: 10px; text-align: center; letter-spacing: 1px; text-transform: uppercase; }
-
   @media (max-width: 1000px) {
-    .page { padding: 15px 10px 230px; }
+    .page { padding: 15px 10px 40px; }
     h1 { font-size: 21px; }
     .principles { grid-template-columns: repeat(2, minmax(180px, 1fr)); }
   }
   @media (max-width: 620px) {
     .principles { grid-template-columns: 1fr; }
     .sub { font-size: 12px; }
-    .details { padding: 12px 15px 15px; }
+    .details { padding: 14px 16px 16px; }
   }
 </style>
 </head>
@@ -371,6 +157,14 @@
     <span><i class="line-sample line-human"></i> ручное решение спорного случая</span>
   </div>
 
+  <nav class="section-nav" aria-label="Переход между разделами схемы">
+    <span class="section-nav-label">Быстрый переход:</span>
+    <button type="button" data-x="0">1. Источники</button>
+    <button type="button" data-x="620">2. Обработка</button>
+    <button type="button" data-x="1290">3. Хранилище</button>
+    <button type="button" data-x="1940">4. amoCRM и результат</button>
+  </nav>
+
   <div class="canvas-outer">
     <div class="canvas" id="canvas">
       <div class="module-frame"></div>
@@ -379,61 +173,61 @@
       <div class="lane lane-store"></div>
       <div class="lane lane-result"></div>
 
-      <div class="col-head" style="left:195px;color:#1d4ed8;border-color:#60a5fa">1. Откуда приходят данные</div>
-      <div class="col-head" style="left:595px;color:#0369a1;border-color:#38bdf8">2. Как объединяются</div>
-      <div class="col-head" style="left:1035px;color:#047857;border-color:#34d399">3. Где хранится детализация</div>
-      <div class="col-head" style="left:1560px;color:#7e22ce;border-color:#c084fc">4. Что получает команда</div>
+      <div class="col-head" style="left:262px;color:#1d4ed8;border-color:#60a5fa">1. Откуда приходят данные</div>
+      <div class="col-head" style="left:910px;color:#0369a1;border-color:#38bdf8">2. Как объединяются</div>
+      <div class="col-head" style="left:1570px;color:#047857;border-color:#34d399">3. Где хранится детализация</div>
+      <div class="col-head" style="left:2262px;color:#7e22ce;border-color:#c084fc">4. Что получает команда</div>
 
       <div class="module-ribbon" id="module-product"><strong>Серверный модуль 10sotok — отдельная разработка</strong>Работает на сервере клиента: принимает данные, объединяет, хранит детализацию и обслуживает виджет amoCRM</div>
 
-      <div class="node source" id="src-calendar" style="top:90px;height:105px">
+      <div class="node source" id="src-calendar" style="top:165px;height:140px">
         <strong>Календарь запусков</strong>
         запуск · продукт · даты · формы · список и ID вебинаров · предложения
         <span class="badge">Заполняется перед запуском</span>
       </div>
-      <div class="node source" id="src-tilda" style="top:235px;height:105px">
+      <div class="node source" id="src-tilda" style="top:380px;height:140px">
         <strong>Tilda</strong>
         имя · телефон · email · форма · UTM · дата регистрации
         <span class="badge">При отправке формы</span>
       </div>
-      <div class="node source" id="src-bizon" style="top:380px;height:105px">
+      <div class="node source" id="src-bizon" style="top:595px;height:140px">
         <strong>Bizon365</strong>
         вебинар · интервалы входа/выхода · время · кнопки · контакты
         <span class="badge">После каждого вебинара</span>
       </div>
-      <div class="node source" id="src-salebot" style="top:525px;height:105px">
+      <div class="node source" id="src-salebot" style="top:810px;height:140px">
         <strong>SaleBot → действующая схема</strong>
         подарки Д1/Д2/Д3 · ответы первого касания · контактные данные
         <span class="badge">События дублируются в модуль</span>
       </div>
-      <div class="node source" id="src-getcourse" style="top:670px;height:105px">
+      <div class="node source" id="src-getcourse" style="top:1025px;height:140px">
         <strong>GetCourse</strong>
         заказ · продукт · тариф · сумма · оплата · рассрочка · возврат
         <span class="badge">При изменении заказа</span>
       </div>
       <div class="source-note">Оригиналы остаются в своих системах. Модуль получает только необходимые для пути клиента события и идентификаторы.</div>
 
-      <div class="node process" id="proc-intake" style="top:120px;height:135px">
+      <div class="node process" id="proc-intake" style="top:170px;height:170px">
         <strong>Приём и безопасная очередь</strong>
         Все события принимаются сразу, выстраиваются по порядку и не теряются при пике после вебинара.
         <span class="badge">Автоматически</span>
       </div>
-      <div class="node process" id="proc-match" style="top:310px;height:105px">
+      <div class="node process" id="proc-match" style="top:420px;height:145px">
         <strong>Поиск одного человека</strong>
         Нормализация и сопоставление по телефону, email и устойчивым ID источников.
         <span class="badge">Телефон + email</span>
       </div>
-      <div class="node process" id="proc-journey" style="top:470px;height:115px">
+      <div class="node process" id="proc-journey" style="top:650px;height:155px">
         <strong>Определение запуска и пути</strong>
         Событие связывается с нужным запуском, сделкой, вебинаром и заказом текущего запуска.
         <span class="badge">1 клиент × 1 запуск</span>
       </div>
-      <div class="node process decision" id="proc-decision" style="top:640px;height:135px">
+      <div class="node process decision" id="proc-decision" style="top:885px;height:175px">
         <strong>Совпадение однозначное?</strong>
-        Конфликт телефона/email, два оплаченных заказа или разные продукты не склеиваются молча.
+        Телефон и email расходятся · два оплаченных заказа · неоднозначный продукт или запуск.
         <span class="badge">Проверка риска</span>
       </div>
-      <div class="node process" id="proc-save" style="top:830px;height:105px">
+      <div class="node process" id="proc-save" style="top:1140px;height:140px">
         <strong>Сохранение и синхронизация</strong>
         Обновляется реестр модуля, затем рабочая сводка передаётся в amoCRM небольшими пакетами.
         <span class="badge">Без перегрузки amoCRM</span>
@@ -444,67 +238,67 @@
         <div class="storage-title">Рабочий реестр модуля</div>
         <div class="storage-subtitle">Хранится на сервере клиента · подробные структурированные данные</div>
 
-        <div class="store-row" id="store-launch" style="top:62px;height:92px">
+        <div class="store-row" id="store-launch" style="top:78px;height:130px">
           <div class="store-icon">▦</div>
           <div class="store-copy"><strong>Запуски и вебинары</strong><small>Состав запуска, роли вебинаров, даты, ID, продающая часть, порядок.</small></div>
         </div>
-        <div class="store-row" id="store-journey" style="top:174px;height:92px">
+        <div class="store-row" id="store-journey" style="top:245px;height:130px">
           <div class="store-icon">◎</div>
           <div class="store-copy"><strong>Путь клиента в запуске</strong><small>Связь человека, запуска, контакта и одной основной сделки amoCRM.</small></div>
         </div>
-        <div class="store-row" id="store-attendance" style="top:286px;height:110px">
+        <div class="store-row" id="store-attendance" style="top:412px;height:145px">
           <div class="store-icon">▶</div>
           <div class="store-copy"><strong>Посещения каждого вебинара</strong><small>Был/не был, интервалы, фактическое время, сегмент, продающая часть, клики.</small></div>
         </div>
-        <div class="store-row" id="store-orders" style="top:416px;height:100px">
+        <div class="store-row" id="store-orders" style="top:594px;height:135px">
           <div class="store-icon">₽</div>
           <div class="store-copy"><strong>Заказы текущего запуска</strong><small>Несколько заказов внутри пути, статусы, суммы, оплаты и отметка главного заказа.</small></div>
         </div>
-        <div class="store-row" id="store-conflicts" style="top:536px;height:100px">
+        <div class="store-row" id="store-conflicts" style="top:766px;height:135px">
           <div class="store-icon">!</div>
-          <div class="store-copy"><strong>Спорные случаи</strong><small>Причина конфликта, сравнение вариантов и решение Виты.</small></div>
+          <div class="store-copy"><strong>Спорные случаи</strong><small>Расхождение контактов, несколько оплат, неясный продукт/запуск и решение Виты.</small></div>
         </div>
-        <div class="store-row" id="store-log" style="top:656px;height:100px">
+        <div class="store-row" id="store-log" style="top:938px;height:130px">
           <div class="store-icon">≡</div>
           <div class="store-copy"><strong>Журнал операций</strong><small>Какое событие принято, что найдено, что изменено и почему.</small></div>
         </div>
       </div>
       <div class="store-note">Реестр модуля — источник полной детализации. В amoCRM передаём только то, что нужно менеджеру, фильтрам, задачам и воронке.</div>
 
-      <div class="node output" id="out-deal" style="top:90px;height:115px">
+      <div class="node output" id="out-deal" style="top:165px;height:145px">
         <strong>Сделка amoCRM: клиент × запуск</strong>
         Текущий запуск · продукт · основной заказ · сумма · статус · ответственный · ссылки на источники
         <span class="badge">Хранится в amoCRM</span>
       </div>
-      <div class="node output" id="out-work" style="top:245px;height:120px">
+      <div class="node output" id="out-work" style="top:380px;height:145px">
         <strong>Поля, этап, приоритет и задачи</strong>
         Регистрация · посещение · 60+ · подарок · клик · заказ · оплата · задача менеджеру
         <span class="badge">Хранится в amoCRM</span>
       </div>
       <div class="widget-frame"></div>
       <div class="widget-frame-title">Отдельно разрабатываемый виджет модуля внутри amoCRM</div>
-      <div class="node output" id="out-webinars" style="top:440px;height:130px">
+      <div class="node output" id="out-webinars" style="top:650px;height:145px">
         <strong>В каждой сделке: «Вебинары запуска»</strong>
         Каждый вебинар отдельно: был/не был · время · сегмент · продающая часть · клик · подробности
         <span class="badge">Интерфейс №1 · карточка сделки</span>
       </div>
-      <div class="node output" id="out-conflict" style="top:610px;height:125px">
+      <div class="node output" id="out-conflict" style="top:835px;height:145px">
         <strong>Общий экран «Спорные случаи»</strong>
         Общая очередь для Виты: сравнить данные · объединить · оставить раздельно · на проверку
         <span class="badge">Интерфейс №2 · открывается в amoCRM</span>
       </div>
-      <div class="node output report" id="out-report" style="top:800px;height:120px">
+      <div class="node output report" id="out-report" style="top:1070px;height:145px">
         <strong>Сводная аналитика запуска</strong>
         Регистрации · пришли · сегменты · продающая часть · клики · заказы · оплаты
         <span class="badge">Автоматическая сводка</span>
       </div>
-      <div class="node output archive" id="out-history" style="top:960px;height:105px">
+      <div class="node output archive" id="out-history" style="top:1270px;height:130px">
         <strong>Полная история прошлых покупок</strong>
         Остаётся в GetCourse. В amoCRM показываем краткую сводку и ссылку на профиль/заказ.
         <span class="badge">Не дублируем в amoCRM</span>
       </div>
 
-      <svg class="edges" id="edges" width="1840" height="1120" aria-hidden="true">
+      <svg class="edges" id="edges" width="2580" height="1500" aria-hidden="true">
         <defs>
           <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"></path></marker>
           <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 Z" fill="#7e22ce"></path></marker>
@@ -537,26 +331,24 @@ const STYLES = {
 };
 
 const EDGES = [
-  { from:'src-calendar', to:'proc-intake', type:'config', fromSide:'right', toSide:'left', fromPort:.5, toPort:.08, label:'настройка запуска', labelX:392, labelY:170 },
-  { from:'src-tilda', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.28, label:'регистрация', labelX:392, labelY:270 },
-  { from:'src-bizon', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.48, label:'отчёт вебинара', labelX:392, labelY:418 },
-  { from:'src-salebot', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.68, label:'подарки и ответы', labelX:392, labelY:560 },
-  { from:'src-getcourse', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.86, label:'заказ / оплата', labelX:392, labelY:705 },
-
-  { from:'proc-intake', to:'proc-match', type:'incoming', fromSide:'bottom', toSide:'top', label:'по порядку', labelX:675, labelY:282 },
-  { from:'proc-match', to:'proc-journey', type:'incoming', fromSide:'bottom', toSide:'top', label:'найден человек', labelX:678, labelY:444 },
-  { from:'proc-journey', to:'proc-decision', type:'incoming', fromSide:'bottom', toSide:'top', label:'собран путь', labelX:676, labelY:615 },
-  { from:'proc-decision', to:'proc-save', type:'store', fromSide:'bottom', toSide:'top', fromPort:.64, toPort:.42, label:'да', labelX:677, labelY:805 },
-  { from:'proc-decision', to:'store-conflicts', type:'human', fromSide:'right', toSide:'left', fromPort:.55, toPort:.5, label:'нет → на проверку', labelX:796, labelY:727 },
-  { from:'proc-save', to:'store-registry', type:'store', fromSide:'right', toSide:'left', fromPort:.55, toPort:.92, label:'сохранить детали', labelX:796, labelY:892 },
-
-  { from:'store-registry', to:'out-deal', type:'crm', fromSide:'right', toSide:'left', fromPort:.18, toPort:.55, label:'сводка текущего запуска', labelX:1272, labelY:165 },
-  { from:'store-registry', to:'out-work', type:'crm', fromSide:'right', toSide:'left', fromPort:.32, toPort:.5, label:'итоги небольшими пакетами', labelX:1274, labelY:305 },
-  { from:'store-attendance', to:'out-webinars', type:'store', fromSide:'right', toSide:'left', fromPort:.5, toPort:.5, label:'детали по ID сделки', labelX:1272, labelY:510 },
-  { from:'store-conflicts', to:'out-conflict', type:'human', fromSide:'right', toSide:'left', fromPort:.35, toPort:.38, label:'общая очередь споров', labelX:1273, labelY:648 },
-  { from:'out-conflict', to:'store-conflicts', type:'human', fromSide:'left', toSide:'right', fromPort:.78, toPort:.78, route:'lower', label:'решение Виты', labelX:1270, labelY:738 },
-  { from:'store-registry', to:'out-report', type:'report', fromSide:'right', toSide:'left', fromPort:.81, toPort:.5, label:'агрегаты без персональных деталей', labelX:1275, labelY:860 },
-  { from:'src-getcourse', to:'out-history', type:'archive', fromSide:'bottom', toSide:'left', route:'bottom', label:'история остаётся в GetCourse', labelX:1030, labelY:1063 }
+  { from:'src-calendar', to:'proc-intake', type:'config', fromSide:'right', toSide:'left', fromPort:.5, toPort:.12, route:'source-bus', viaX:535 },
+  { from:'src-tilda', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.31, route:'source-bus', viaX:560 },
+  { from:'src-bizon', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.5, route:'source-bus', viaX:585 },
+  { from:'src-salebot', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.69, route:'source-bus', viaX:610 },
+  { from:'src-getcourse', to:'proc-intake', type:'incoming', fromSide:'right', toSide:'left', fromPort:.5, toPort:.88, route:'source-bus', viaX:635 },
+  { from:'proc-intake', to:'proc-match', type:'incoming', fromSide:'bottom', toSide:'top' },
+  { from:'proc-match', to:'proc-journey', type:'incoming', fromSide:'bottom', toSide:'top' },
+  { from:'proc-journey', to:'proc-decision', type:'incoming', fromSide:'bottom', toSide:'top' },
+  { from:'proc-decision', to:'proc-save', type:'store', fromSide:'bottom', toSide:'top', fromPort:.62, toPort:.42, label:'однозначно', labelX:1000, labelY:1097 },
+  { from:'proc-decision', to:'store-conflicts', type:'human', fromSide:'right', toSide:'left', fromPort:.52, toPort:.5, label:'есть спор', labelX:1240, labelY:965 },
+  { from:'proc-save', to:'store-registry', type:'store', fromSide:'right', toSide:'left', fromPort:.5, toPort:.94, label:'сохранить детали', labelX:1238, labelY:1215 },
+  { from:'store-journey', to:'out-deal', type:'crm', fromSide:'right', toSide:'left', fromPort:.45, toPort:.5, route:'result-bus', viaX:1885, label:'рабочая сводка', labelX:1885, labelY:350 },
+  { from:'store-registry', to:'out-work', type:'crm', fromSide:'right', toSide:'left', fromPort:.27, toPort:.5, label:'поля и задачи', labelX:1898, labelY:455 },
+  { from:'store-attendance', to:'out-webinars', type:'store', fromSide:'right', toSide:'left', fromPort:.5, toPort:.5, label:'данные вебинаров', labelX:1898, labelY:715 },
+  { from:'store-conflicts', to:'out-conflict', type:'human', fromSide:'right', toSide:'left', fromPort:.35, toPort:.38, label:'показывает спор', labelX:1898, labelY:905 },
+  { from:'out-conflict', to:'store-conflicts', type:'human', fromSide:'left', toSide:'right', fromPort:.78, toPort:.78, route:'lower', label:'решение Виты', labelX:1898, labelY:1025 },
+  { from:'store-registry', to:'out-report', type:'report', fromSide:'right', toSide:'left', fromPort:.86, toPort:.5, label:'аналитика запуска', labelX:1898, labelY:1145 },
+  { from:'src-getcourse', to:'out-history', type:'archive', fromSide:'right', toSide:'left', route:'bottom', label:'полная история остаётся в GetCourse', labelX:1620, labelY:1453 }
 ];
 
 const DETAILS = {
@@ -592,6 +384,13 @@ const DETAILS = {
 const canvas = document.getElementById('canvas');
 const svg = document.getElementById('edges');
 const NS = 'http://www.w3.org/2000/svg';
+const canvasOuter = document.querySelector('.canvas-outer');
+
+document.querySelectorAll('.section-nav button').forEach(button => {
+  button.addEventListener('click', () => {
+    canvasOuter.scrollTo({ left: Number(button.dataset.x), behavior: 'smooth' });
+  });
+});
 
 function rectOf(id) {
   const el = document.getElementById(id);
@@ -606,11 +405,14 @@ function anchor(r, side, port=.5) {
   return { x:r.x+r.w*port, y:r.y+r.h };
 }
 function routePath(edge, a, b) {
+  if (edge.route === 'source-bus' || edge.route === 'result-bus') {
+    return `M ${a.x} ${a.y} L ${edge.viaX} ${a.y} L ${edge.viaX} ${b.y} L ${b.x} ${b.y}`;
+  }
   if (edge.route === 'top') {
     return `M ${a.x} ${a.y} L ${a.x+35} 72 L ${b.x-35} 72 L ${b.x} ${b.y}`;
   }
   if (edge.route === 'bottom') {
-    return `M ${a.x} ${a.y} L ${a.x} 1065 L ${b.x-45} 1065 L ${b.x-45} ${b.y} L ${b.x} ${b.y}`;
+    return `M ${a.x} ${a.y} L ${a.x+70} ${a.y} L ${a.x+70} 1450 L ${b.x-60} 1450 L ${b.x-60} ${b.y} L ${b.x} ${b.y}`;
   }
   if (edge.route === 'lower') {
     const y = Math.max(a.y,b.y)+38;
